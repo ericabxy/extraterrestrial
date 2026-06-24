@@ -1,8 +1,10 @@
-return [[
+local dungeon = require('src.dungeon')
+
+local charmap = [[
 ################################
 #........#.....................#
 #........#.....................#
-#........#.....................#
+#..............................#
 #........#.....................#
 #........#.....................#
 ##########.....................#
@@ -24,3 +26,19 @@ return [[
 #..............................#
 ################################
 ]]
+
+-- Class table.
+local stage0 = dungeon:new{
+}
+
+-- Constructor.
+function stage0:new(o)
+  o = o or {}
+  setmetatable(o, self)
+  self.__index = self
+  -- Initialization.
+  o:load_string(charmap)
+  return o
+end
+
+return stage0

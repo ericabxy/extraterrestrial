@@ -1,4 +1,4 @@
-local sprite = require('src.sprite')
+local character = require('src.character')
 
 local ANIMSPEED = 8
 local MOVESPEED = 6
@@ -28,7 +28,7 @@ local LEFT = {
   love.graphics.newQuad(96, 96, 32, 32, 128, 128),
 }
 
-local vance = sprite:new{
+local vance = character:new{
   animation_frame = 0,
   texture = love.graphics.newImage('share/Vance.png'),
   quad = love.graphics.newQuad(0, 0, 32, 32, 128, 128),
